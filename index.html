@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Front-End 03 JS</title>
+</head>
+<body>
+   <header>
+       <nav>
+           <ul>
+              
+               <li><a id="home" href="#"><h4>JavaScript</h4></a></li>
+               <li><a id="" href="#">Window Alert</a></li>
+               <li><a href="#var1">Inner Text</a></li>
+               <li><a href="#Var2">Total</a></li>
+               <li><a  href="#object">Concatenate</a></li>
+               <li><a href="#func1">Object</a></li>
+               <li><a  href="#temperature">Temperature</a></li>
+               <li></li>
+           </ul>
+           
+       </nav>
+       
+   </header>
+   
+    <h3>Here, we learn about JavaScript</h3>
+    <h2>an interesting techniques to learn</h2>
+       <hr>
+
+    <p>#1st example: we'll create a window alert on the browser, so as soon as the visitor access the web page the window alert will appear. </p>
+     <p id="2nd"> </p>
+     
+    <div class="content-tb">
+        <p>Total : <b id="Var1"></b></p>
+        <p>Course Title : <b id="Var2"></b></p>
+        <p>Trainee Info: <b id="object"></b></p>
+        <p>Total Value: <b id="func1"></b></p>
+        <p>Temperature: <b id="temperature"></b></p>
+        <!--  View Result Example -->
+    <form name="FormCalc">
+        <p>1st Number: <input type="number" name="fnumber" placeholder="Enter 1st Number here"></p>
+        <p>2nd Number: <input type="number" name="snumber" placeholder="Enter 2nd Number here"></p>
+        
+        <button type="button"  value="Multiply" onclick="Multiply()">Multiply
+        </button>
+        <button type="button" value="Divide" onclick="Divide()">Divide
+        </button>
+        <p>The Result is: <input type="text" class="viewresult"  id="viewresult"></p>
+    </form>
+     </div>
+     
+    <script>
+        
+        //JS Window Alert. 
+    window.alert('Hello There, Hope you Enjoy visiting this page :) ');
+        
+        //JS Inner Txt.
+    document.getElementById("2nd").innerHTML = ("let's get started 💪");
+        
+        //#01 JS var output total number.
+    var a, b, c;
+        
+        a = 10;
+        b = 20;
+        c = a + b;
+        
+        document.getElementById("Var1").innerHTML = c;
+        
+         //#02 JS var output Concatenate string .
+        var $x = "JavaScript";
+        var $y = "Course";
+        var $z = $x +" "+$y;
+        
+        document.getElementById("Var2").innerHTML = $z;
+        
+        //#03 JS var Object.
+        var person = {
+            
+            FirstName: "Ali",
+            LastName : "Ahmed",
+            age      : 35,
+            eyecolor : "Black"
+            
+        };
+        document.getElementById("object").innerHTML = person.FirstName + " " + person.LastName + " is "  + person.age + " years old.";
+        
+        //#04 JS Function.
+        function myfunction1 (p1, p2){
+            
+            return p1 * p2;
+        }
+        document.getElementById("func1").innerHTML = myfunction1(6,6);
+        
+        //#05 JS Function - Tempreture conversion.
+        
+        document.getElementById("temperature").innerHTML = "The Temperature is " + toCelsius(77) + " Celsius";
+        function toCelsius(fahremheit){
+            
+            return (5/9) * (fahremheit - 32);
+        }
+        
+        //#06 JS Function - input Calc.
+        
+        function Multiply()
+        {
+            
+            var num1, num2, result; 
+                
+              num1 = Number(document.FormCalc.fnumber.value);               
+              num2 = Number(document.FormCalc.snumber.value);
+            result = num1 * num2;
+            document.FormCalc.viewresult.value=result;
+            
+            }
+       function Divide(){
+            
+            var num1, num2, result; 
+                
+              num1 = Number(document.FormCalc.fnumber.value);               
+              num2 = Number(document.FormCalc.snumber.value);
+            result = num1/num2;
+            document.FormCalc.viewresult.value=result;
+            
+            }
+            
+        
+    </script> 
+    
+
+    <br>
+    
+    <p>#2nd example, we'll create a button, when the visitor clicks on it, it'll show some message.</p>
+   
+    
+    <!-- Button with Js -->
+    <button type="button" onclick="document.write('Welcome to TechCampus')">View Here
+    </button>
+     <!-- /Button with Js -->
+     
+     
+</body>
+</html>
